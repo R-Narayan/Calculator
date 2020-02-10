@@ -1,0 +1,73 @@
+body {
+    font-family: 'Russo One', sans-serif;
+    background: url("unnamed.jpg");
+	background-repeat : no-repeat;
+	background-size : cover;
+}
+div{
+        font-family: 'Roboto', sans-serif;
+
+}
+.button {
+    background-color: #01314b;
+    color: #FFFFFF;
+    width: 25px;
+    height: 45px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: lighter;
+    padding-top: 3px;
+}
+.button:hover {
+    background-color: #1f4287;
+}
+.row {
+    display: table;
+    width: 200px; /*Optional*/
+    table-layout: fixed; /*Optional*/
+}
+.column {
+    display: table-cell;
+}
+#calc-zero {
+    width: 52.6666px;
+}
+#calc-clear {
+    width: 52.6666px;
+}
+#calc-display-val {
+    height: 80px;
+    color: black;
+    text-align: left;
+    border-left: 1px solid #000099;
+    border-right: 1px solid #000099;
+    border-top: 1px solid #000099;
+    font-size: 32px;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #181818;
+    color: white;
+    padding: 12px;
+    border-radius: 7px 7px 0 0;
+    text-align: right;
+    font-size: 48px ;
+}
+.button-operator {
+    background-color: black;
+    color: #278ea5;
+}
+#calc-parent {
+    margin-left: calc(50% - 100px);
+}
+h1 {
+    text-align: center;
+    margin-top: 200px;
+    color:gray;
+}
+#calc-zero {
+    border-radius: 0 0 0 7px;
+}
+#calc-equals {
+    border-radius: 0 0 7px 0;
+}
