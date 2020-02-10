@@ -6,13 +6,13 @@ body {
 }
 div{
         font-family: 'Roboto', sans-serif;
-
+        margin : auto;
 }
 .button {
     background-color: #01314b;
     color: #FFFFFF;
     width: 25px;
-    height: 45px;
+    height: 65px;
     text-align: center;
     cursor: pointer;
     font-size: 30px;
@@ -24,50 +24,59 @@ div{
 }
 .row {
     display: table;
-    width: 200px; /*Optional*/
-    table-layout: fixed; /*Optional*/
+    width: 300px;
 }
 .column {
     display: table-cell;
 }
 #calc-zero {
-    width: 52.6666px;
+    width: 51px;
 }
 #calc-clear {
-    width: 52.6666px;
+    width: 50px;
 }
 #calc-display-val {
     height: 80px;
     color: black;
     text-align: left;
-    border-left: 1px solid #000099;
-    border-right: 1px solid #000099;
-    border-top: 1px solid #000099;
+    border-left: 2px solid #01314b;
+    border-right: 2px solid #01314b;
+    border-top: 2px solid #01314b;
     font-size: 32px;
     overflow: hidden;
     white-space: nowrap;
     background-color: #181818;
     color: white;
     padding: 12px;
-    border-radius: 7px 7px 0 0;
+    border-radius: 10px 10px 0 0;
     text-align: right;
     font-size: 48px ;
 }
 .button-operator {
     background-color: black;
     color: #278ea5;
+    border-right: 2px solid #01314b;
 }
-#calc-parent {
-    margin-left: calc(50% - 100px);
+#calc-equals{
+	border-bottom: 2px solid #01314b;
 }
 h1 {
     text-align: center;
-    margin-top: 200px;
+    font-size: 50px;
+    margin-top: 50px;
     color:gray;
 }
 #calc-zero {
-    border-radius: 0 0 0 7px;
+    border-radius: 0 0 0 10px;
 }
 #calc-equals {
-    border-radius: 0 0 7px 0;
+    border-radius: 0 0 10px 0;
+}
+a{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  padding-left: 47.5%;
+
 }
