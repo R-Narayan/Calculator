@@ -1,156 +1,56 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <title>Calculator</title>
-        <link rel="stylesheet" type="text/css" href="calcstyle.css">
-        <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100">
-    </head>
-    <body>
-        <h1>HTML Calculator</h1>
-        <div id="calc-parent">
-            <div class="row">
-                <div class="column" id="calc-display-val">0</div>
-            </div>
-            <div class="row">
-                <div class="button column" id="calc-clear">AC</div>
-                <div class="button column" id="calc-backspace">&#8676;</div>
-                <div class="button button-operator column" id="calc-divide">÷</div>
-            </div>
-            <div class="row">
-                <div class="button num column" id="calc-seven">7</div>
-                <div class="button num column" id="calc-eight">8</div>
-                <div class="button num column" id="calc-nine">9</div>
-                <div class="button button-operator column " id="calc-multiply">x</div>
-            </div>
-            <div class="row">
-                <div class="button num column" id="calc-four">4</div>
-                <div class="button num column" id="calc-five">5</div>
-                <div class="button num column" id="calc-six">6</div>
-                <div class="button button-operator column" id="calc-minus">-</div>
-            </div>
-            <div class="row">
-                <div class="button num column" id="calc-one">1</div>
-                <div class="button num column" id="calc-two">2</div>
-                <div class="button num column" id="calc-three">3</div>
-                <div class="button button-operator column" id="calc-plus">+</div>
-            </div>
-            <div class="row">
-                <div class="button num column" id="calc-zero">0</div>
-                <div class="button column" id="calc-decimal">.</div>
-                <div class="button button-operator column" id="calc-equals">=</div>
+<head>
+    <title>CALCULATOR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/main.css">
+    <script type="text/javascript" src="assets/Jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<section>
+    <div class="container-fluid text-center">
+        <div class="col-md-4 col-md-offset-4 card shadow calc-container">
+            <input id="calc-screen" type="text" class="col-xs-12 screen">
+            <div class="col-xs-12 keypad">
+                <div class="row">
+                    <button id="clear-btn" class="btn  col-xs-3 operator">⇤</button>
+                    <button class="btn  col-xs-3 operator">(</button>
+                    <button class="btn  col-xs-3 operator">)</button>
+                    <button class="btn  col-xs-3 operator">/</button>
+                </div>
+                <div class="row">
+                    <button class="btn  col-xs-3">7</button>
+                    <button class="btn  col-xs-3">8</button>
+                    <button class="btn  col-xs-3">9</button>
+                    <button class="btn  col-xs-3 operator">*</button>
+                </div>
+                <div class="row">
+                    <button class="btn  col-xs-3">4</button>
+                    <button class="btn  col-xs-3">5</button>
+                    <button class="btn  col-xs-3">6</button>
+                    <button class="btn  col-xs-3 operator">-</button>
+                </div>
+                <div class="row">
+                    <button class="btn  col-xs-3">1</button>
+                    <button class="btn  col-xs-3">2</button>
+                    <button class="btn  col-xs-3">3</button>
+                    <button class="btn  col-xs-3 operator">+</button>
+                </div>
+                <div class="row">
+                    <button class="btn  col-xs-3">.</button>
+                    <button class="btn  col-xs-3">0</button>
+                    <button class="btn  col-xs-3"></button>
+                    <button class="btn  col-xs-3 operator">=</button>
+                </div>
             </div>
         </div>
-        <div>
-           <a href="https://github.com/R-Narayan/Calculator"><img src="GitHub-Mark-64px.png">
-            </a>
-        </div>
-        <script>
-            var one = document.getElementById('calc-one');
-            var two = document.getElementById('calc-two');
-            var three = document.getElementById('calc-three');
-            var four = document.getElementById('calc-four');
-            var five = document.getElementById('calc-five');
-            var six = document.getElementById('calc-six');
-            var seven = document.getElementById('calc-seven');
-            var eight = document.getElementById('calc-eight');
-            var nine = document.getElementById('calc-nine');
-            var zero = document.getElementById('calc-zero');
-            var decimal = document.getElementById('calc-decimal');
-            var clear = document.getElementById('calc-clear');
-            var equals = document.getElementById('calc-equals');
-            var plus = document.getElementById('calc-plus');
-            var minus = document.getElementById('calc-minus');
-            var divide = document.getElementById('calc-divide');
-            var multiply = document.getElementById('calc-multiply');
-            var backspace = document.getElementById('calc-backspace');
-            var displayValElement = document.getElementById('calc-display-val');
-            var calcNums = document.getElementsByClassName("num");
-            var calcOperators = document.getElementsByClassName("button-operator");
-            var displayVal = '0';
-            var pendingVal;
-            var evalStringArray = [];
+    </div>
+</section>
+<script type="text/javascript" src="assets/main.js"></script>
+</body>
 
-            var numberClick = (num) => {
-                if(displayVal === '0')
-                    displayVal = '';
-                displayVal += num;
-                displayValElement.innerHTML = displayVal;
-            };
-            var updateDisplayVal = (clickObj) => {
-                let Text = clickObj.target.innerText;
-                numberClick(Text);
-            };
+</html>	
+	
 
-            var performOperation = (clickObj) => {
-                var operation = clickObj.target.innerText;
-                switch (operation) {
-                    case '+':
-                        pendingVal = Number.parseFloat(displayVal);
-                        displayVal = '0';
-                        displayValElement.innerHTML = displayVal;
-                        evalStringArray.push(pendingVal);
-                        evalStringArray.push('+');
-                        break;
-                    case '-':
-                        pendingVal = Number.parseFloat(displayVal);
-                        displayVal = '0';
-                        displayValElement.innerHTML = displayVal;
-                        evalStringArray.push(pendingVal);
-                        evalStringArray.push('-');
-                        break;
-                    case 'x':
-                        pendingVal = Number.parseFloat(displayVal);
-                        displayVal = '0';
-                        displayValElement.innerHTML = displayVal;
-                        evalStringArray.push(pendingVal);
-                        evalStringArray.push('*');
-                        break;
-                    case '÷':
-                        pendingVal = Number.parseFloat(displayVal);
-                        displayVal = '0';
-                        displayValElement.innerHTML = displayVal;
-                        evalStringArray.push(pendingVal);
-                        evalStringArray.push('/');
-                        break;
-                    case '=':
-                        evalStringArray.push(displayVal);
-                        var evaluation = eval(evalStringArray.join(' '));
-                        displayValElement.innerHTML = evaluation;
-                        displayVal = evaluation;
-                        pendingVal = displayVal;
-                        evalStringArray = [];
-                        displayVal = evaluation + '';
-                        break;
-                    default:
-                        break;
-                }
-            };
 
-            for (var i = 0; i < calcNums.length; i++) {
-                calcNums[i].addEventListener('click', updateDisplayVal, false);
-            }
-            for (var i = 0; i < calcOperators.length; i++) {
-                calcOperators[i].addEventListener('click', performOperation, false);
-            }
-
-            clear.onclick = () => {
-                displayVal = '0';
-                pendingVal = undefined;
-                evalStringArray = [];
-                displayValElement.innerHTML = displayVal;
-            };
-            backspace.onclick = () => {
-                let lengthOfDisplayVal = displayVal.length;
-                displayVal = displayVal.slice(0, lengthOfDisplayVal - 1);
-                displayValElement.innerHTML = displayVal;
-            };
-            decimal.onclick = () => {
-                if(displayVal === '')
-                    displayVal += '0';
-                displayVal += '.'
-                displayValElement.innerHTML = displayVal;
-            };
-        </script>
-    </body>
-</html>
